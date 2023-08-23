@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RunCache", "RunCache\RunCache.csproj", "{FD8B91DB-796B-4393-9178-01F67A0DD555}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InCache", "InCache\InCache.csproj", "{2D2C3869-2EA2-4C92-B1DF-1FFA415D83CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD8B91DB-796B-4393-9178-01F67A0DD555}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD8B91DB-796B-4393-9178-01F67A0DD555}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD8B91DB-796B-4393-9178-01F67A0DD555}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD8B91DB-796B-4393-9178-01F67A0DD555}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D2C3869-2EA2-4C92-B1DF-1FFA415D83CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D2C3869-2EA2-4C92-B1DF-1FFA415D83CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D2C3869-2EA2-4C92-B1DF-1FFA415D83CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D2C3869-2EA2-4C92-B1DF-1FFA415D83CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A37E51C-4AA6-477D-A87E-A05E52AD8D2C}
+	EndGlobalSection
+EndGlobal
