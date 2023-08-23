@@ -13,14 +13,17 @@ namespace InCache.Cookie {
         public static bool Remove(string key) {
             if (string.IsNullOrEmpty(key))
                 return false;
-            
-            
-            //bool result = Cookies.Remove(key);
 
-            //if(result)
+            int index = GetIndex(key);
+            if (index >= 0)
+            {
+                Cookies.RemoveAt(index);
                 _Save();
+                return true;
+            }
+
             
-            return true;
+            return false;
             
             
         }

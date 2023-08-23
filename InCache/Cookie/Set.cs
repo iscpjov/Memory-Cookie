@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.Json;
-using InCache.ManagerJson;
+
 namespace InCache.Cookie {
     partial class Cookie {
         /// <summary>
@@ -16,26 +13,18 @@ namespace InCache.Cookie {
         /// var micooki = Cookie.Set("nombrecooki", "valor") o
         /// Cookie.Set("nombrecooki", "valor")
         /// </example>
-        public static object Set(string key, object value)
-        {
+        public static object Set(string key, object value) {
             if (String.IsNullOrEmpty(key) || value is null)
                 return null;
 
             ObjCookie cookie = new ObjCookie(key, value);
             int index = GetIndex(key);
 
-            if (index >= 0){
+            if (index >= 0)
                 Edit(cookie, index);
-            }
             else
-            {
                 Add(cookie);
-
-            }
-
             return value;
-        
-            
         }
     }
 }

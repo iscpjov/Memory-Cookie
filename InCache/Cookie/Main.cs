@@ -35,13 +35,10 @@ namespace InCache.Cookie {
         /// no tocar este solito se ejecuta y es necesario para leer las cookis ya exsitentes por si hay
         /// para mas informacion de como funciona ver <see cref="Files.Read"/> y <see cref="Json.Deserialize{T}(string)"/>
         /// </remarks>
-        
         static Cookie() {
-            
             string txt = Files.Read();
             if (!string.IsNullOrEmpty(txt))
                 Cookies = (List<ObjCookie>)Json.Deserialize<List<ObjCookie>>(txt);
-            
         }
     }
 }

@@ -41,8 +41,7 @@ namespace RunCache {
             */
             var tester = Cookie.Get<List<int>>("tester");
 
-            if (tester is InCache.CacheReult.failconvert)
-                Console.WriteLine("fallo");
+            
             Cookie.Set("date", DateTime.Now);
             Cookie.Set("perro", "perro");
 
@@ -56,7 +55,7 @@ namespace RunCache {
             var doble = Cookie.Get("double");
             var obj = Cookie.Get<test>("test");
 
-            Console.Read();
+            
             Console.Read();
         }
 

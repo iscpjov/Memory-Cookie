@@ -1,6 +1,6 @@
 ﻿using InCache.ManagerJson;
 using InCache.ManagerFiles;
-using System.Data.SqlTypes;
+
 
 namespace InCache.Cookie {
     partial class Cookie {

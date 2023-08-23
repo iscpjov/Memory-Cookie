@@ -1,41 +1,36 @@
 ﻿using InCache.ManagerJson;
-using System.Text.Json;
 
-namespace InCache.Cookie{
-    partial class Cookie{
+namespace InCache.Cookie {
+    partial class Cookie {
+
         /// <summary>
-        /// metodo para su obtencion (convercion) para que se puedan utilizar
-        /// <see cref="Getter(string)"/>
-        /// <see cref="Add(string, dynamic)"/>
+        /// obtencion de la cookie atravez de su identificador
         /// </summary>
-        /// <typeparam name="T">tipo de dato a convertir</typeparam>
-        /// <param name="key">nombre de la coookie almacenada</param>
-        /// <returns>
-        /// devuelve el valor solicitado si este existe
-        /// encaso contrarrio devuelve null
-        /// </returns>
-        /// <example>Cookie.Get<List<int>>("micookie")</example>
-
+        /// <see cref="GetType(string)"/>
+        /// <see cref="GetStringType(string)"/>
+        /// <typeparam name="T">Tipo de dato que solicitemos</typeparam>
+        /// <param name="key">identificador de la cookie (String)</param>
+        /// <returns>returno el parametro que se solicita si existe y null si no se encuentra o esta equibocado el T</returns>
         public static object Get<T>(string key) {
             int index = GetIndex(key);
-            if (index >= 0)
-            {
-                ObjCookie cookie = Cookies[index];
-                return Json.Deserialize<T>(cookie.Value);
+            if (index >= 0) {
+                try {
+                    ObjCookie cookie = Cookies[index];
+                    return Json.Deserialize<T>(cookie.Value);
+                } catch {
+                    return null;
+                }
             }
             return null;
         }
+
         /// <summary>
-        /// metodo para obtener el valor de la cookie almacena y si esta no existe lo añade
-        /// <see cref="Getter(string)"/>
-        /// <see cref="Add(string, dynamic)"/>
+        /// obtencion de la cookie atravez de su identificador y si esta no se encuentra la agrega
         /// </summary>
-        /// <typeparam name="T">tipo de dato a convertir</typeparam>
-        /// <param name="key">nombre de la coookie almacenada</param>
-        /// <param name="value">valor de la cookie</param>
-        /// <returns>devuelve el valor ya sea el almacenado o el nuevo valor si esta no existe</returns>
-        /// <example>Cookie.Get<List<int>>("micookie", new list<int>{1,2,3,4,5,6,7,8})</example>
-        public static object Get<T>(string key, dynamic value) {
+        /// <typeparam name="T">Tipo de dato que solicitemos</typeparam>
+        /// <param name="key">identificador de la cookie (String)</param>
+        /// <returns>returno el parametro ya sea que se encuentre o se agrege</returns>
+        public static object Get<T>(string key, object value) {
             var cookie = Get<T>(key);
             if (cookie is null)
             {
@@ -44,9 +39,6 @@ namespace InCache.Cookie{
             }
             else
                 return cookie;
-
-            
         }
-
     }
 }
