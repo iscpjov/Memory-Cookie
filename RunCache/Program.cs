@@ -24,6 +24,8 @@ namespace RunCache {
             test te = new test { t1 = 10, t2 = "prueba" };
             gato g = new gato { Nombre = "misifu", Edad = 5 };
             Cookie.Set("gato", g);
+
+            var testerror = Cookie.Get<int[]>("gato");
             var test = Cookie.Get("gato" , 70);
             var inta = Cookie.Get("int5", 60);
             Type t = typeof(string);

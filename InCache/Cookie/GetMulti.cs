@@ -1,4 +1,5 @@
 ﻿using InCache.ManagerJson;
+using System;
 
 namespace InCache.Cookie {
     partial class Cookie {
