@@ -99,6 +99,3 @@ Key es un dato string para identificar la cookie
 return true si la cookie false si no se pudo eleminar
 **Ejemplo** 
 Type type = Cookie.Clear()
-
-
-
